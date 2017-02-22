@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Servlet form 연동</title>
+<script type="text/javascript">
+function enter() {
+	var ef = document.enterForm;
+	var age = ef.userAge.value;
+	if(isNaN(age)){
+		alert("숫자로 입력하세요");
+		return false;
+	}
+}
+</script>
+</head>
+<body>
+<form  name="enterForm" method="get" action="EnterServlet" onsubmit="return enter()">
+이름<input type="text" name="userName" required="required"><br>
+나이<input type="text" name="userAge" required="required"><br>
+<input type="submit" value="입장">
+</form>
+</body>
+</html>

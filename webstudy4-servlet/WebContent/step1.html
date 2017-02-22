@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>servlet 첫번재 테스트</title>
+</head>
+<body>
+<!-- method : 전송방식
+			 	get과 post
+	action : 요청할 서버프로그램 url
+	
+	get방식 요청일때 url형태
+	http://localhost:8888/webstudy4-servlet/FirstServlet?userName=dd
+ -->
+<form method="get" action="FirstServlet">
+이름<input type="text" name="userName">
+	<input type="submit" value="get방식 전송">
+</form>
+<a href="FirstServlet?userName=아이유">FirstServlet으로 이동</a>
+<br><br>
+<form method="post" action="FirstServlet">
+이름<input type="text" name="userName">
+	<input type="submit" value="post방식 전송">
+</form>
+</body>
+</html>

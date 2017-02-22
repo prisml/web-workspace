@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>step2 http method</title>
+</head>
+<body>
+	<form action="MethodServlet">
+		이름<input type="text" name="memberName" required="required"/><br> 
+		주소<input type="text" name="memberAddr" required="required"/><br>
+		<input type="submit" value="등록" />
+	</form>
+	<br><br><br>
+	<form action="MethodServlet" method="post">
+		이름<input type="text" name="memberName" required="required"/><br> 
+		주소<input type="text" name="memberAddr" required="required"/><br>
+		<input type="submit" value="등록" />
+	</form>
+</body>
+</html>

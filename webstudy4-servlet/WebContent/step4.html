@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입폼</title>
+<script type="text/javascript">
+function register() {
+	var rf=document.regiForm;
+	var id=rf.memId.value; 
+	if(id.length<3 || id.length>10){
+		alert("아이디 길이");
+		return false;
+	}
+	var pass=rf.memPass.value; 
+	if(pass.length<5){
+		alert("비밀번호 길이");
+		return false;
+	}
+	var confirm=rf.confirmPass.value; 
+	if(pass!=confirm){
+		alert("비밀번호 확인");
+		return false;
+	}
+	return false;
+}
+</script>
+</head>
+<body>
+	<form name="regiForm" method="post" action="RegisterServlet" onsubmit="return register()">
+		아이디<input type="text" name="memId" required="required">(3자 이상 10자 이하)<br> 
+		패스워드<input type="password" name="memPass" required="required">(5자 이상)<br>
+		<!-- 패스워드와 패스워드 확인은 일치해야 가입 가능 -->
+		패스워드확인 <input type="password" name="confirmPass" required="required"><br>
+		이름 <input type="text" name="memName" required="required"><br>
+		주소 <input type="text" name="memAddress" required="required"><br>
+		성별 <input type="radio" name="gender" value="남" required="required">남
+		<input type="radio" name="gender" value="여" required="required">여<br>
+		혈액형<select name="blood">
+			<option value="">--혈액형--</option>
+			<option value="A">--A--</option>
+			<option value="B">--B--</option>
+			<option value="O">--O--</option>
+			<option value="AB">-AB-</option>
+		</select> <input type="submit" value="등록">
+	</form>
+</body>
+</html>
