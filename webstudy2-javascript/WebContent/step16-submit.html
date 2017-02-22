@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>submit</title>
+<script type="text/javascript">
+function orderForm() {
+	var order = document.menuForm;
+	var str = "";
+	var count = order.count.value;
+	for(var i=0;i<order.menu.length;i++){
+		if(order.menu[i].checked)
+			str+=order.menu[i].value;
+	}
+	if(str == ""){
+		alert("메뉴를 선택하세요");
+		return false;
+	}
+	if(count == ""){
+		alert("수량을 입력하세요");
+		return false;
+	}
+	if(isNaN(count)){
+		alert("숫자로 입력하세요");
+		return false;
+	}
+}
+</script>
+</head>
+<body>
+<form name="menuForm" action="order.jsp" onsubmit="return orderForm()">
+<input type="checkbox" name="menu" value="순대국">순대국<br>
+<input type="checkbox" name="menu" value="돈까스">돈까스<br>
+<input type="checkbox" name="menu" value="왕십리곱창">왕십리곱창<br>
+<input type="text" name="count" size="2">인분<br>
+<input type="submit" value="주문">
+</form>
+</body>
+</html>

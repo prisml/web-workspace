@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>step19-dom</title>
+<script type="text/javascript">
+function onView() {
+	var img = document.getElementById("imgView");
+	img.innerHTML="<img src='a.jpg'>";
+}
+function offView() {
+	var img = document.getElementById("imgView");
+	img.innerHTML="";
+}
+</script>
+</head>
+<body>
+<input type="button" value="보기" onclick="onView()">
+<input type="button" value="감추기" onclick="offView()">
+<div id="imgView"></div>
+</body>
+</html>

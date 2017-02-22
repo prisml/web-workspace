@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>javascript form 제어</title>
+<script type="text/javascript">
+function checkForm() {
+	var name = document.memberForm.memName.value;
+	var age = document.memberForm.memAge.value;
+	//isNaN() : 숫자 데이터가 아니면 true 반환
+	if(isNaN(age))
+		alert("나이를 숫자로 넣어라")
+	else if(age < 19)
+		alert(name + "님 " + age + "세 미성년이므로 입장불가");
+	else
+		alert(name + "님 " + age + "세 성인이므로 입장가능");
+	document.memberForm.reset();
+}
+</script>
+</head>
+<body>
+	<form name="memberForm">
+		이름 <input type="text" name="memName"><br> 
+		나이 <input type="text" name="memAge"> <br> 
+		<input type="button" value="입장" onClick="checkForm()">
+	</form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>체크박스</title>
+<script type="text/javascript">
+function showOrder() {
+	var menu = document.menuForm;
+	var str="";
+	var count=0;
+	
+	for(var i=0;i<menu.menu.length;i++){
+		if(menu.menu[i].checked){
+			str += menu.menu[i].value+ " ";
+			count++;
+		}
+	}
+	if(count!=0)
+		alert(str+"주문완료!");
+	else
+		alert("메뉴를 입력하세요!");
+	menu.reset();
+}
+</script>
+</head>
+<body>
+<form name="menuForm">
+<input type="checkbox" name="menu" value="피자">피자<br>
+<input type="checkbox" name="menu" value="치킨">치킨<br>
+<input type="checkbox" name="menu" value="꽃등심">꽃등심<br>
+<input type="checkbox" name="menu" value="광어">광어<br>
+<input type="checkbox" name="menu" value="스테이크">스테이크<br>
+<input type="button" value="주문" onclick="showOrder()">
+</form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function check() {
+	var v = document.subwayForm.line.value;
+	if(v=="")
+		alert("공란을선택");
+	else
+		alert(v+"호선을선택");
+	document.subwayForm.reset();
+}
+</script>
+</head>
+<body>
+<form name="subwayForm">
+<select name="line">
+<option value="">--호선--</option>
+<option value="1">1호선</option>
+<option value="2">2호선</option>
+<option value="3">3호선</option>
+</select>
+<input type="button" value="확인" onclick="check()">
+</form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>javascript form 제어</title>
+<script type="text/javascript">
+function moveTxt() {
+	var org = document.moveForm.orgTxt;
+	var dest = document.moveForm.destTxt;
+	var tmp;
+	tmp=org.value;
+	org.value=dest.value;
+	dest.value=tmp;
+}
+</script>
+</head>
+<body>
+	<form name="moveForm">
+		<input type="text" name="orgTxt"> 
+		<input type="button" value="이동" onclick="moveTxt()"> 
+		<input type="text" name="destTxt">
+	</form>
+</body>
+</html>

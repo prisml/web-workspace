@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function deposit() {
+		var bal = document.depositForm.balance.value;
+		if (bal == "")
+			alert("금액을입력하세요!");
+		else if (isNaN(bal))
+			alert("입금금액은 숫자로 입력하세요");
+		else if (bal < 0)
+			alert("잘못된금액입니다");
+		else
+			alert(bal + "원 입금완료되었습니다");
+		bal = "";
+	}
+</script>
+</head>
+<body>
+	<form name="depositForm">
+		금액<input type="text" name="balance"> 
+		<input type="button" value="입금" onclick="deposit()">
+	</form>
+</body>
+</html>
