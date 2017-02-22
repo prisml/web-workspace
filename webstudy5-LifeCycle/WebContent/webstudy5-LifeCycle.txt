@@ -1,0 +1,71 @@
+**참고**
+webstudy5 웹프로젝트는 web module version 2.5로 생성했다
+이는 Servlet 생성시 xml 기반 설정이 자동으로 생성된다.
+(3.0 이상부터는 Servlet 생성시 Annotation 기반 설정으로 자동생성)
+**오늘 주요 목차**
+	- request.getParameterValues()
+	- ServletLifeCycle
+	- Servletconfig
+	- ServletContext
+	
+----------------------------------------
+Servlet LifeCycle
+init(ServletCo.nfig) --> service(request,response) --> destroy()
+
+construdctor : 객체 초기화 -> 1번
+init() : 서블릿 초기화	-> 1번
+service() : 클라이어트에게 서비스 -> client 요청수에 비례
+destroy() : 서블릿이 서버에서 해제되기 직전에 호출 --->1번
+                     WAS(Web Container)
+   client --request-->    is loaded? --no--> class loading
+                           |                     |
+                           |                  객체생성(생성자호출)
+                           yes                     |
+                           |                  init(ServletConfig)
+                           |                     |
+                           |   ------------>   service(request, response) - doGet() or doPost()
+                                 <---response--
+
+                           destroy()
+
+   **ServletConfig**
+   Servlet 객체가 웹프로그램으로 일하는데 필요한 정보를
+   가지고 있는 객체
+   Servlet 객체당 하나
+   웹 컨테이너에 의해 각 서블릿의 init(ServletConfig) 메서드
+   호출 될 때 주입된다
+
+   client가 LoginServlet에 100명이 접속해서 로그인 서비스를 
+   제공받았다
+   
+   LoginServlet 객체 몇개? 1
+   LoginServlet의 ServletConfig 몇개? 1
+   LoginServlet의 init() 몇번호출? 1
+   LoginServlet의 service() 몇번호출? 100
+   LoginServlet의 스레드는 몇개 생성? 100
+   LoginServlet의 destroy() 몇번호출? 죽기전에 한번
+   
+ Servlet Configuration Object 개별 서블릿 설정 정보 객체이다
+ 주로 사용되는 용도는
+ Spring Framework의 web application 환경 설정시
+ Spring Framework 설정 파일 정보를 특정서블릿(DispatcherServlet)에게
+ 전달할 때 활용된다
+ 또한 웹 어플리케이션 내에 모든 서블릿과 jsp가 공유할 수 있는 객체인
+ ServletContext를 활용하기 위해서는 반드시
+ ServletConfig객체가 필요하다
+ 
+ **ServletContext**
+ 웹어플리케이션 당 하나 생성
+ 웹어플리케이션 시작 시점에 웹컨테이너가 ServletContext객체를 생성한다
+ 웹어플리케이션 전역에서 필요한 환경정보를 저장
+ 모든 서블릿과 JSP는 ServletContext에 접근 가능하고
+ 필요시 정보를 할당 및 반환받을 수도 있다
+ 각 서블릿과 JSP는 자신의 ServletConfig 객체가 할당되어 있어서
+ ServletContext를 접근해 사용할 수 있다
+ 
+ ** 오늘 주요 개념 **
+ Servlet LifeCycle 전체흐름
+ Servlet Interface의 라이프 사이클 메서드 init() service() destroy()
+ ServletConfig
+ ServletContext
+ Web Container
