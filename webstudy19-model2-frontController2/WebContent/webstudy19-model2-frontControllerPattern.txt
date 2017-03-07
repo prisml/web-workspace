@@ -1,0 +1,37 @@
+Model2(webstudy17구조)
+						Controller
+index.jsp -- find.jsp -- FindServlet
+
+			insert.jsp -- InsertServlet
+			
+			findByAddress.jsp -- FindByAddressServlet
+			
+컨트롤러 영역의 컨트롤러 서블릿의 수가 많아지고
+일관성있는 정책 적용에 한계가 있다
+
+Model2(MVC Pattern + Front Controller Pattern 적용)
+Front Controller Pattern
+: 여러 클라이언트의 다양한 요청을 하나의 진입점으로 모아
+  처리하기 위한 패턴 (ex-호텔의 프런트, 은행의 콜센터)
+  -> 생산성 : 중복되는 작업을 한 곳에서 처리
+  	 유지보수성 : 이후 변경되는 요소를 한 곳(Front Controller)에서만 변경하면 된다
+  	 
+Front Controller pattern 적용 후 모든 클라이언트의 요청을
+DispatcherServlet(Front Controller)가 처리한다
+
+	 						Controller
+index.jsp -- find.jsp -- DispatcherServlet
+
+			insert.jsp -- DispatcherServlet
+			
+			findByAddress.jsp -- DispatcherServlet
+			
+webstudy18에서 front controller pattern을 적용하여 개발
+--> 업무가 증가할수록 FrontController인 DispatcherServlet이 비대해진다
+	--> 컨트롤러 업무별로 별도의 클래스를 정의해 처리하도록 설계
+		--> 표준화(다형성)를 위해 Controller Interface를 정의하고
+			모든 컨트롤러들은 이 인터페이스를 구현하도록 설계한다
+			
+	client --- 검색 --> DispatcherServlet --> Controller Interface
+	client --- 등록 -->							 |				|
+	client --- 수정 -->						검색컨트롤러		등록컨트롤러	

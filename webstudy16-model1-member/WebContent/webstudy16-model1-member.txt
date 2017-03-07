@@ -1,0 +1,15 @@
+** Model 1 Architecture 기반 회원관리 **
+
+JDBC Driver loading 은 ServletContextListener를 이용한다
+MemberDAO는 Singleton Design Pattern을 적용한다
+
+아이디로 회원 검색
+
+index.jsp --> findMemberById --> findMemberById-action.jsp <--> MemberDAO <--> DB
+				검색폼				검색결과
+									존재하면
+									회원정보 제공(패스워드제외)
+									존재하지 않으면
+									alert();
+									메세지는 king 아이디에 해당하는 
+									회원은 존재하지 않습니다.

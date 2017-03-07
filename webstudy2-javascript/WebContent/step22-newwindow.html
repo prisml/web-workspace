@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>step22-newwindow</title>
+<script type="text/javascript">
+function openPopup() {
+	open("step23-popup.html","mypopup","width=200,height=200,top=150,left=200");
+}
+function showHidden() {
+	alert(document.testForm.data.value);
+}
+</script>
+</head>
+<body>
+<form name="testForm">
+<input type="text" name="nickName">
+<input type="hidden" value="ok" name="data">
+<input type="button" value="팝업띄우기" onclick="openPopup()">
+<input type="button" value="히든값확인" onclick="showHidden()">
+</form>
+</body>
+</html>

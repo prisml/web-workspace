@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>popup</title>
+<script type="text/javascript">
+function onPopup() {
+	self.close();
+}
+function testOpener(){
+	alert(opener.document.testForm.data.value);
+	alert(opener.document.testForm.nickName.value);
+	opener.document.testForm.nickName.value="";
+}
+</script>
+</head>
+<body>
+<input type="button" value="확인" onclick="onPopup()"><br>
+<input type="button" value="본창(opener)에 접근 테스트" onclick="testOpener()">
+</body>
+</html>

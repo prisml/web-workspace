@@ -1,0 +1,38 @@
+li {
+	color: orange;
+}
+
+.text {
+	color: lime;
+}
+
+#test2 {
+	color: aqua;
+}
+
+body {
+	background-color: yellow;
+	font-size: large;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+td, th{
+	padding: 15px;
+}
+
+a:LINK{
+	color:#888;
+	text-decoration: none;
+}
+
+a:HOVER {
+	color: #ffcc00;
+	text-decoration: none;
+}

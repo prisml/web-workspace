@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="webstudy1-html" path="/webstudy1-html" reloadable="true" source="org.eclipse.jst.jee.server:webstudy1-html"/><Context docBase="webstudy2-javascript" path="/webstudy2-javascript" reloadable="true" source="org.eclipse.jst.jee.server:webstudy2-javascript"/><Context docBase="webstudy4-servlet" path="/webstudy4-servlet" reloadable="true" source="org.eclipse.jst.jee.server:webstudy4-servlet"/><Context docBase="webstudy5-LifeCycle" path="/webstudy5-LifeCycle" reloadable="true" source="org.eclipse.jst.jee.server:webstudy5-LifeCycle"/><Context docBase="webstudy6-ServletcontextListener" path="/webstudy6-ServletcontextListener" reloadable="true" source="org.eclipse.jst.jee.server:webstudy6-ServletcontextListener"/><Context docBase="webstudy7-model1" path="/webstudy7-model1" reloadable="true" source="org.eclipse.jst.jee.server:webstudy7-model1"/></Host>
+      <Context docBase="webstudy20-HandlerMapping" path="/webstudy20-HandlerMapping" reloadable="true" source="org.eclipse.jst.jee.server:webstudy20-HandlerMapping"/></Host>
     </Engine>
   </Service>
 </Server>
